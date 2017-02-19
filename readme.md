@@ -1,5 +1,6 @@
 ### Intro
   * Simple & synchronized Shopping Cart JavaScript application. 
+  * Project demo available online: https://mhdsid.github.io/ShoppingCart
 
 ### Description
   * Data binding across views
