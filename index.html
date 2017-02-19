@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingCart">
+<head>
+    <title>Shopping Cart</title>
+    <meta charset="UTF-8">
+    <link rel="manifest" href="manifest.json">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#e34f38">
+
+    <base href="/">
+    <!-- build:css /lib.css-->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css /app/main.css-->
+    
+   <!--  <!-- inject:css -->   
+    <link rel="stylesheet" href="/development/_public/styles/main.css">   
+    <!-- endinject --> 
+
+    <!-- endbuild -->
+
+
+</head>
+<body dir="ltr">
+    <script>
+    (function() {
+        var link = document.createElement('link');
+        link.href = "/development/_public/styles/main.css";
+        link.rel = 'stylesheet';
+        link.type= 'text/css';
+        document.head.appendChild(link);
+    })();
+    </script>
+    <sidebar class="sidebar left"></sidebar>
+
+    <!-- Load view -->
+    <div ng-view class="compiled-view"></div>
+   
+    <!-- build:js /lib.js-->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js /app/build.js-->
+    <!-- inject:js -->
+    <script src="/development/app.module.js"></script>
+    <script src="/development/app.cartService.js"></script>
+    <script src="/development/app.config.js"></script>
+    <script src="/development/app.constants.js"></script>
+    <script src="/development/app.mainController.js"></script>
+    <script src="/development/app.routes.js"></script>
+    <script src="/development/app.service.js"></script>
+    <script src="/development/Cart/cart.js"></script>
+    <script src="/development/Quantity/qttDirective.js"></script>
+    <script src="/development/Checkout/checkout.js"></script>
+    <script src="/development/Shop/shop.js"></script>
+    <script src="/development/Shop/shopController.js"></script>
+    <script src="/development/Sidebar/sidebar.js"></script>
+    <script src="/development/loader/loader.js"></script>
+    <!-- endinject -->
+    <!-- inject:templates:js -->
+    
+    <!-- endinject -->
+    <!-- endbuild -->
+
+</body>
+</html>

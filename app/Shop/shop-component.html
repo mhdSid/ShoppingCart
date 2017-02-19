@@ -1,0 +1,27 @@
+<section data-ng-if="$ctrl.doneFetching">
+
+	<section class="card" data-ng-repeat="item in $ctrl.data track by item.id">
+
+		<img class='left' data-ng-src="{{::item.image}}">
+
+		<div class="card-info overflow-hidden">
+			<div class="c-item first"><h3 data-ng-bind="::(item.title)"></h3> - <span data-ng-bind='::(item.price | currency:"USD$")'></span></div>
+
+			<div class="c-item description"><i data-ng-bind="::item.description"></i></div>
+			<div class="c-item">
+				ID: <span data-ng-bind="::item.id"></span> 
+				
+			</div>
+
+			<div class="actions">
+				<button class="card-button right" data-ng-bind="::$ctrl.text.button" data-ng-click='$ctrl.addToCart($index)'></button>
+
+				<quantity></quantity>
+
+			</div>
+			
+		</div>
+	</section>
+
+</section>
+

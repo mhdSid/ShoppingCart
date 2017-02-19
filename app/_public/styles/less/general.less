@@ -1,0 +1,483 @@
+
+* {
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;height: 100%;min-width: 100%;min-height: 100%;
+}
+
+@red: #e34f38;
+@black: black;
+@white: white;
+
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.card {
+    position: relative;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    border: 1px solid @black;
+	max-width: 50em;
+	min-width: 40em;
+    left: 0;
+    right: 0;
+    margin: 1.5em auto;
+
+    .card-info {
+        position: relative;
+        height: 250px;
+        padding: 0 1em;
+
+        h3 {
+        	display: inline-block;
+        }
+
+        .first {
+        	margin: 0;
+
+        	span {
+        		color: @red;
+        		font-weight: bolder;
+        		font-size: 1.2em;
+        	}
+        }
+
+        button {
+        	border: none;
+        }
+
+        .c-item {
+        	margin: 1em 0;
+        }
+
+        .description {
+        	height: 3em;
+		    overflow: scroll;
+		    line-height: 1.5em;
+        }
+    }
+
+    .actions {
+		position: absolute;
+	    bottom: 0;
+	    height: 4em;
+	    width: ~'calc(100% - 1em);';
+		border-top: 1px solid @black;
+
+	    .card-button {
+	    	
+	        height: 100%;
+    		width: 50%;
+	        background-color: @black;
+	        color: @white;
+	        cursor: pointer;
+	        border-bottom-right-radius: 0.5em;
+	        transition: .3s background-color;
+	        font-size: smaller;
+
+			&:hover {
+				background-color: @red;
+			}
+	    }
+	}
+}
+
+.quantity {
+	width: 50%;
+	padding: 1em 0;
+	text-align: center;
+	display: inline-block;
+
+	div {
+		display: inline-block;
+	}
+	    
+	.qtt-inner {
+		width: 5em;
+		height: 2em;
+		border: 1px solid @black;
+		padding: 0.4em;
+
+		div, span {
+			width: 33.333%;
+		}
+
+		div {
+			cursor: pointer;
+			height: 100%;
+		}
+
+		.plus {
+			float: right;
+		}
+
+		.minus {
+			float: left;
+		}
+	}
+}
+
+.relative {
+	position: relative;
+}
+
+
+.sidebar {
+    // background-color: #303030;
+    background-color: @red;
+    color: @white;
+    margin: 0;
+    width: 250px;
+    display: inline-block;
+    height: 100%; 
+
+    ul {
+    	list-style: none; padding: 0;
+    }
+
+    .my-bag {
+    	margin: 0;
+    	height: 77%;
+    	overflow: scroll;
+    	padding: 0.5em 0 0em 0.2em;
+	    
+	    li {
+
+	    	.actions {
+	    		display: none;
+	    		position: absolute;
+	    		left: 0;
+	    		right: 0;
+	    		bottom: 0;
+	    		top: 0;
+
+	    		.cover {
+	    			position: absolute;
+		    		left: 0;
+		    		right: 0;
+		    		bottom: 0;
+		    		top: 0;
+		    		background-color: rgba(0, 0, 0, 0.8);
+	    		}
+
+	    		.quantity {
+					padding: 6.5px 0;
+
+		    		.qtt-inner {
+		    			position: relative;
+		    			border: 1px solid white;
+		    		}
+		    	}
+
+		    	.remove {
+		    		width: 47%;
+				    border-left: 1px solid white;
+				    display: inline-block;
+				    text-align: center;
+				    cursor: pointer;
+
+				    &:hover {
+				    	color: @red;
+				    }
+		    	}
+	    	}
+
+	    	&:hover {
+	    		.actions {
+		    		display: block;
+		    	}
+	    	}
+	    }
+
+
+    	h4 {
+    		margin: 0;
+    		text-align: center;
+    		color: @red;
+    	}
+    }
+
+    .sidebar-list {
+        margin-top: 5em; 
+	
+		a {
+			text-decoration: none;
+			display: block;
+			color: @white;
+		}
+
+	    .cart-href, .shop-href {
+	     	padding: 0 2em;   
+
+	     	&:hover {
+	     		color: #e34f38;
+	     	}
+	    }
+		
+		.sidebar-item {
+			color: @white;
+		}
+
+	    .first {
+	    	margin: 3em 0;background-color: @black; padding: 0.5em 0;height: 2em;
+	    }
+
+	    .second {
+	    	position: relative;
+
+	    	.plus-sign {
+	    	 	position: absolute; top: 0.3em; right: 1em;
+	    	 	cursor: pointer;
+	    	}
+	    	.cart-href {
+	    	 	padding: 0.5em 2em; background-color: @black; height: 2em;
+	    	}
+
+	    	section {
+	    	 	margin: 1em 1em 0; 
+	    	 	height: 23em;
+	    	 	border: 1px solid @black;
+			    background-color: #303030;
+			    border-bottom-left-radius: 6em;
+			    border-bottom-right-radius: 6em;
+			    border-top: none;
+	    	}
+
+	    	.checkout-href {
+	    		&:hover {
+    				color: @red;
+    			}
+	    	}
+
+	    	.checkout-btn {
+	    		text-align: center;
+    			margin: 2em 0;
+    			cursor: pointer;
+    			border: 1px solid;
+			    width: 7em;
+			    left: 0;
+			    right: 0;
+			    margin: auto;
+			    margin-top: 2em;	
+	    	}
+	    }
+    }
+}
+
+.cart-checkout-btn {
+	cursor: pointer;
+}
+
+.trans {
+	transition: .3s background-color;
+
+	&:hover {
+		background-color: @red;
+	}
+}
+
+.page {
+	background-color: @white; 
+	height: 100%; 
+	width: 100%;
+	overflow: scroll;
+
+	h2 {
+		margin-left: 2em;
+	}
+
+	header {
+		height: 4em; 
+		background-color: @red;
+
+		h3 {
+			display: inline-block; 
+			width: 50%;     
+		    height: 100%;
+		    padding: 1.2em; 
+		    color: @white; 
+		    background-color: @red;
+		    margin: 0;
+		    transition: .3s background-color;
+
+			&:hover {
+				background-color: @black;
+			}
+		}
+	}
+}
+
+.my-bag {
+	li {
+		margin: 0.5em 0;
+		border-bottom: 1px solid @black;
+		padding-bottom: 0.3em;
+		position: relative;
+
+		img {
+			height: 2.5em;
+			border: 1px solid @white;
+		}
+
+		.info {
+			height: 2.5em;
+			padding: 0.3em 0 0.3em 0.5em;
+
+			.title, .price {
+				font-size: 10px;
+			}
+
+			.price {
+				float: right;
+				margin: 1em 0.5em 0 0.5em;
+				font-size: 11px;
+			}
+		}
+	}
+}
+
+.page-checkout  {
+	position: relative;
+	border: 1px solid @black;
+
+	.my-bag {
+		display: inline-block;
+	    height: 14.8em;
+	    overflow: scroll;
+	    margin: 0;
+	    width: 75%;
+	    padding: 0;
+	    padding: 0.5em 0 0em 0.2em;
+	    position: relative;
+	    margin: 0 .5em;
+
+	    h4 {
+	    	//position: absolute;
+	    	text-align: right;
+	    }
+
+	    li {
+			.info {
+				.price {
+					margin: 0em 0.5em;
+				}
+			}
+	    }
+    }
+
+	summary {
+		padding: 5em;
+		position: relative;
+		width: 100%;
+		height: 70%;
+
+		a {
+			button {
+				margin: 0 1em;
+			}
+		}
+
+		button {
+	    	width: 33.333%;
+    		height: 2.5em;
+    		background-color: @white;
+    		border: 1px solid @red;
+    		color: @red;
+    		float: right;
+
+    		&:hover {
+				background-color: @red;
+				color: @white;
+    		}
+	    }
+
+		.box-item {
+			border-bottom: 1px solid #999999;
+    		padding-bottom: 1em;
+    		margin-bottom: 1em;
+		}
+
+		.shipping-information {
+			padding-bottom: 3em;
+		}
+
+		input {
+			padding: 1em;
+    		color: #999999;
+
+    		&:focus {
+				outline: none;
+			}
+		}
+
+		input:not(.appt) {
+			&.ng-empty {
+				border: 1px solid @red;
+			}
+		}
+
+		input[type='email'], .city {
+    		width: 100%;
+		}
+
+		input[type='email'] {
+			&.ng-invalid {
+				border: 1px solid @red;
+			}
+		}
+
+		div {
+			margin-bottom: .5em;
+		}
+
+		.appt {
+			 width: 29%;
+		}
+
+		.fname, .lname, .country, .postal-code {
+    		width: 49.5%;
+		}
+
+		.address {
+			width: 70%;
+		}
+	}
+}
+
+.accordion {
+	img {
+		width: 5em;
+		float: left;
+	}
+
+	.info {
+		display: inline-block;
+	    padding: 1.95em 1em;
+	    margin: 0 1em;
+	    //background-color: #303030;
+	    background-color: #e5e5e5;
+	    width: ~'calc(100% - 7em)';
+
+	    div {
+	    	display: inline-block;
+	    	margin: 0 1em;
+	    	color: @red;
+	    }
+	}
+}
+
+
+.compiled-view {
+    display: inline-block; height: 100%; width: ~'calc(100% - 250px)'; padding: 3.5em;background-color: #f2f2f2;
+}
