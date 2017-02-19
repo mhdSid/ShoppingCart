@@ -1,15 +1,17 @@
 ### Intro
-* A simple backbone app synchronized with localstorage.  
-* It shows the simplicity and the synchronicity of the MVC framework.
+  * Simple Shopping Cart application. simple backbone app synchronized with localstorage.  
+  * It shows the simplicity and the synchronicity of the MVC framework.
 
-### It offers admins the ability to:
-  * Create users / Create groups
-  * Remove users / Remove groups
-  * Add users to groups / Remove users from groups
-  * Assign users to groups / Remove users from groups
-  * Search for groups & users
+### Description
+  * Data binding across views
+  * Store fetched from local JSON file
+  * Many ways to add items to the cart
+  * Cart items stored in localstorage for later checkout
 
-##### Clone the repository through https 
+### Specs
+  * AngularJs 1.5.6
+  * Typescript & ES6 specs
+  * LocalStorage API
 
 ### Open the command line
   navigate to the root of the project, and run:
@@ -18,4 +20,4 @@
   * ```gulp start to run the application```
   
 ### Run the application 
-  http://localhost:9090
+  http://localhost:9090 or https://localhost:9090 if a certificate is installed on a local Apache server
