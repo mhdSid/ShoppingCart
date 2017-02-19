@@ -1,6 +1,5 @@
 ### Intro
-  * Simple Shopping Cart application. simple backbone app synchronized with localstorage.  
-  * It shows the simplicity and the synchronicity of the MVC framework.
+  * Simple & synchronized Shopping Cart JavaScript application. 
 
 ### Description
   * Data binding across views
