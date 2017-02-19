@@ -133,7 +133,7 @@ var ShoppingCart;
     angular.module('ShoppingCart').config(configFn);
     configFn.$inject = ['$routeProvider', '$locationProvider'];
     function configFn($routeProvider, $locationProvider) {
-        $locationProvider.html5Mode(true);
+        //$locationProvider.html5Mode(true);
         $routeProvider
             .when('/', {
             //templateUrl: cdn.mainUrl + 'Shop/shop.html'
