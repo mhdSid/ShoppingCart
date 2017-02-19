@@ -150,11 +150,10 @@
 
     (function () {
         angular.module('ShoppingCart').run(runFn);
-        runFn.$inject = ['$rootScope', 'Cart'];
-        function runFn($rootScope, Cart) {
+        runFn.$inject = ['$rootScope', 'Cart', '$location'];
+        function runFn($rootScope, Cart, $location) {
             $rootScope.$on('$routeChangeStart', function(e, next, current) {
-                console.log(e, next, current)
-                if (next === '/checkout') {
+                if (next.loadedTemplateUrl && next.loadedTemplateUrl === 'build/Checkout/checkout.html') {
                     if (Cart.totalPrice <= 0) {
                         $location.path('/');
                     }
