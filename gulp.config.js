@@ -25,12 +25,14 @@
             fontsPath: GlobalConfig.appPath + "_public/styles/fonts/*.*",
             htmlPath: GlobalConfig.appPath + "**/*.html",
             jsonPath: GlobalConfig.appPath + "**/*.json",
-            imgagesPath: GlobalConfig.appPath + "_public/images/*.*",
+            imagesPath: GlobalConfig.appPath + "_public/images/*.*",
 
             tsPath: GlobalConfig.appPath + "**/*.ts",
             jsPath: [GlobalConfig.env + "/*.module.js", GlobalConfig.env + "/app.*.js", GlobalConfig.env + "/**/*.js"],
 
             index: "index.html",
+
+            build: "./build/"
 
         };
 

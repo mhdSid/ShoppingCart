@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingCart">
+<head>
+    <title>Shopping Cart</title>
+    <meta charset="UTF-8">
+    <link rel="manifest" href="manifest.json">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#e34f38">
+    <!-- <link rel="stylesheet" href="/app/main.css"> -->
+</head>
+<body dir="ltr">
+    <script>
+    (function() {
+        var link = document.createElement('link');
+        link.href = "build/_public/styles/main.css";
+        link.rel = 'stylesheet';
+        link.type= 'text/css';
+        document.head.appendChild(link);
+    })();
+    </script>
+    <sidebar class="sidebar left"></sidebar>
+
+    <!-- Load view -->
+    <div ng-view class="compiled-view"></div>
+   
+    <script async src="build/lib.js"></script>
+    
+    <script async src="build/build.js"></script>
+
+</body>
+</html>
