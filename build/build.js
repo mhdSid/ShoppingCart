@@ -135,25 +135,25 @@ var ShoppingCart;
     function configFn($routeProvider, $locationProvider) {
         //$locationProvider.html5Mode(true);
         $routeProvider
-            .when('/', {
+            .when('#/', {
             //templateUrl: cdn.mainUrl + 'Shop/shop.html'
             templateUrl: 'build/Cart/cart.html',
             controller: 'CartController',
             controllerAs: 'cartCtrl'
         })
-            .when('/shop', {
+            .when('#/shop', {
             templateUrl: 'build/Shop/shop.html',
             controller: 'ShopController',
             controllerAs: 'shopCtrl'
         })
-            .when('/checkout', {
+            .when('#/checkout', {
             templateUrl: 'build/Checkout/checkout.html',
             controller: 'CheckoutController',
             controllerAs: 'checkoutCtrl',
             pageClass: 'page-checkout'
         })
             .otherwise({
-            redirectTo: '/'
+            redirectTo: '#/'
         });
     }
     ;
