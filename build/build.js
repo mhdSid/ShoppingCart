@@ -152,7 +152,7 @@
         angular.module('ShoppingCart').run(runFn);
         runFn.$inject = ['$rootScope', 'Cart'];
         function runFn($rootScope, Cart) {
-            $rootScope.$on('$routChangeStart', function(e, next, current) {
+            $rootScope.$on('$routeChangeStart', function(e, next, current) {
                 console.log(e, next, current)
                 if (next === '/checkout') {
                     if (Cart.totalPrice <= 0) {
