@@ -150,24 +150,19 @@ var ShoppingCart;
             templateUrl: 'build/Checkout/checkout.html',
             controller: 'CheckoutController',
             controllerAs: 'checkoutCtrl',
-            pageClass: 'page-checkout'
+            pageClass: 'page-checkout',
+            reject: resolveFn
         })
             .otherwise({
             redirectTo: '/'
         });
-    }
-    ;
-})();
 
-(function () {
-    angular.module('ShoppingCart').run(runFn);
-    runFn.$inject = ['$location', 'Cart'];
-    function runFn($location, Cart) {
-        if ($location.path() === '/checkout') {
+        resolveFn.$inject = ['Cart'];
+        function resolveFn(Cart) {
             if (Cart.totalPrice <= 0) {
-                $lcoation.path('/');
+                $location.path('/');
             }
-        }
+        }   
     }
     ;
 })();
@@ -300,7 +295,7 @@ var ShoppingCart;
         }
         CheckoutController.prototype.loaderCallback = function () {
             this.cartItems = [];
-            this.$location.path('/cart');
+            this.$location.path('/');
         };
         CheckoutController.prototype.proceed = function () {
             if (this.userData.email && this.userData.email !== ''
