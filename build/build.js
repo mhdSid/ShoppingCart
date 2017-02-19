@@ -145,14 +145,6 @@
             .otherwise({
                 redirectTo: '/'
             });
-
-            $rootScope.$on('$routChangeStart', function(e, next, current) {
-                if (next === '/checkout') {
-                    if (Cart.totalPrice <= 0) {
-                        $location.path('/')
-                    }
-                }
-            });
         }
     })();
 
