@@ -441,7 +441,7 @@
                                     $scope.callback();
                                 }
                                 $timeout.cancel(timer);
-                            }, 500, false);
+                            }, 500);
                         }
                         else {
                             ytbCircularLoader.setAttribute('stroke-dashoffset', Number(current - 2));
