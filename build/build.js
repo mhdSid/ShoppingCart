@@ -159,6 +159,19 @@ var ShoppingCart;
     ;
 })();
 
+(function () {
+    angular.module('ShoppingCart').run(runFn);
+    runFn.$inject = ['$location', 'Cart'];
+    function configFn($location, Cart) {
+        if ($location.path() === '/checkout') {
+            if (Cart.totalPrice <= 0) {
+                $lcoation.path('/');
+            }
+        }
+    }
+    ;
+})();
+
 (function (ShoppingCart) {
     'use strict';
     var DataFeftcher = (function () {
