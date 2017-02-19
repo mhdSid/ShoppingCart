@@ -88,7 +88,6 @@
                 this.cartItems.splice(index, 1);
             };
             Cart.prototype.createLocalStorageItem = function (item) {
-                console.log(item);
                 if (this.localStorage) {
                     var localItem = this.parse(this.localStorage.getItem(item.id));
                     if (!localItem) {
@@ -300,9 +299,9 @@
                     && this.userData.city && this.userData.city !== ''
                     && this.userData.country && this.userData.country !== ''
                     && this.userData.postalCode && this.userData.postalCode !== 0
-                    && this.userData.paymentAmount && this.userData.paymentAmount !== 0)
+                    && this.userData.paymentAmount && this.userData.paymentAmount !== 0
+                    && this.Cart.totalPrice > 0)
                     this.userData.paymentAmount = this.Cart.totalPrice;
-                console.log(this.userData);
             };
             CheckoutController.$inject = ['Cart', '$scope', '$location'];
             return CheckoutController;
