@@ -131,8 +131,8 @@ var ShoppingCart;
 
 (function () {
     angular.module('ShoppingCart').config(configFn);
-    configFn.$inject = ['$routeProvider', '$locationProvider'];
-    function configFn($routeProvider, $locationProvider) {
+    configFn.$inject = ['$routeProvider', '$locationProvider', '$rootScope', 'Cart'];
+    function configFn($routeProvider, $locationProvider, $rootScope, Cart) {
         //$locationProvider.html5Mode(true);
         $routeProvider
             .when('/', {
@@ -150,19 +150,19 @@ var ShoppingCart;
             templateUrl: 'build/Checkout/checkout.html',
             controller: 'CheckoutController',
             controllerAs: 'checkoutCtrl',
-            pageClass: 'page-checkout',
-            reject: resolveFn
+            pageClass: 'page-checkout'
         })
             .otherwise({
             redirectTo: '/'
         });
 
-        resolveFn.$inject = ['Cart'];
-        function resolveFn(Cart) {
-            if (Cart.totalPrice <= 0) {
-                $location.path('/');
+        $rootScope.$on('$routChangeStart', function(e, next, current) {
+            if (next === '/checkout') {
+                if (Cart.totalPrice <= 0) {
+                    $location.path('/')
+                }
             }
-        }   
+        });
     }
     ;
 })();
