@@ -122,8 +122,8 @@
 
     (function () {
         angular.module('ShoppingCart').config(configFn);
-        configFn.$inject = ['$routeProvider', '$locationProvider', '$rootScope', 'Cart'];
-        function configFn($routeProvider, $locationProvider, $rootScope, Cart) {
+        configFn.$inject = ['$routeProvider', '$locationProvider'];
+        function configFn($routeProvider, $locationProvider) {
             //$locationProvider.html5Mode(true);
             $routeProvider
                 .when('/', {
